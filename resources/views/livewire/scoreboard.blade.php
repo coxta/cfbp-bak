@@ -66,33 +66,33 @@
                                 <div class="flex flex-col divide-y divide-gray-200">
 
                                     <!-- Box Score -->
-                                    <table class="min-w-full divide-y divide-gray-200">
+                                    <table class="min-w-full ">
                                         <thead class="">
                                             <tr>
                                                 <th scope="col"
-                                                    class="px-3 py-1.5 text-left font-bold text-gray-500 uppercase tracking-wider">
+                                                    class="px-3 py-1.5 text-left font-bold text-gray-600 text-xs uppercase tracking-wider">
                                                     1
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-3 py-1.5 text-left font-bold text-gray-500 uppercase tracking-wider">
+                                                    class="px-3 py-1.5 text-left font-bold text-gray-600 text-xs uppercase tracking-wider">
                                                     2
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-3 py-1.5 text-left font-bold text-gray-500 uppercase tracking-wider">
+                                                    class="px-3 py-1.5 text-left font-bold text-gray-600 text-xs uppercase tracking-wider">
                                                     3
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-3 py-1.5 text-left font-bold text-gray-500 uppercase tracking-wider">
+                                                    class="px-3 py-1.5 text-left font-bold text-gray-600 text-xs uppercase tracking-wider">
                                                     4
                                                 </th>
                                                 @if (count($game->home_lines) > 4)
                                                     <th scope="col"
-                                                        class="px-3 py-1.5 text-left font-bold text-gray-500 uppercase tracking-wider">
+                                                        class="px-3 py-1.5 text-left font-bold text-gray-600 text-xs uppercase tracking-wider">
                                                         OT
                                                     </th>
                                                     @for ($p = 2; $p <= count($game->home_lines) - 4; $p++)
                                                         <th scope="col"
-                                                            class="px-3 py-1.5 text-left font-bold text-gray-500 uppercase tracking-wider">
+                                                            class="px-3 py-1.5 text-left font-bold text-gray-600 text-xs uppercase tracking-wider">
                                                             {{ $p . 'OT' }}
                                                         </th>
                                                     @endfor
@@ -101,18 +101,18 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                @foreach ($game->home_lines as $hline)
-                                                    <td scope="col"
-                                                        class="px-3 py-1.5 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
-                                                        {{ $hline['value'] }}
-                                                    </td>
-                                                @endforeach
-                                            </tr>
-                                            <tr>
                                                 @foreach ($game->away_lines as $aline)
                                                     <td scope="col"
                                                         class="px-3 py-1.5 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
                                                         {{ $aline['value'] }}
+                                                    </td>
+                                                @endforeach
+                                            </tr>
+                                            <tr>
+                                                @foreach ($game->home_lines as $hline)
+                                                    <td scope="col"
+                                                        class="px-3 py-1.5 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                        {{ $hline['value'] }}
                                                     </td>
                                                 @endforeach
                                             </tr>

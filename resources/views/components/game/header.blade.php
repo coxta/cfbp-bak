@@ -21,14 +21,18 @@
                 </div>
 
                 @if(isset($game->away_records))
-                    @foreach ($game->away_records as $rec)
-                        @if ($rec['type'] == 'total')
-                            <div class=" text-sm text-gray-600 p-0 font-light">
-                                {{ '(' . $rec['summary'] . ')' }}
-                            </div>
-                        @endif
-                    @endforeach
+                    <div class=" text-sm text-gray-600 p-0 font-light">
+                        @foreach ($game->away_records as $rec)
+                            @if ($rec['type'] == 'total')
+                                {{ '(' . $rec['summary'] }}
+                            @endif
+                            @if ($rec['type'] == 'vsconf')
+                                {{ ', ' . $rec['summary'] . ' ' . $game->awayConference->abbr . ')' }}
+                            @endif
+                        @endforeach
+                    </div>
                 @endif
+
 
             </div>
             @if($game->status_desc != 'Scheduled')
@@ -100,13 +104,16 @@
                 </div>
 
                 @if(isset($game->home_records))
-                    @foreach ($game->home_records as $rec)
-                        @if ($rec['type'] == 'total')
-                            <div class=" text-sm text-gray-600 p-0 font-light">
-                                {{ '(' . $rec['summary'] . ')' }}
-                            </div>
-                        @endif
-                    @endforeach
+                    <div class=" text-sm text-gray-600 p-0 font-light">
+                        @foreach ($game->home_records as $rec)
+                            @if ($rec['type'] == 'total')
+                                {{ '(' . $rec['summary'] }}
+                            @endif
+                            @if ($rec['type'] == 'vsconf')
+                                {{ ', ' . $rec['summary'] . ' ' . $game->homeConference->abbr . ')' }}
+                            @endif
+                        @endforeach
+                    </div>
                 @endif
 
             </div>

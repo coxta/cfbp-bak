@@ -20,13 +20,16 @@
                 </div>
 
                 @if(isset($game->home_records))
-                    @foreach ($game->home_records as $rec)
-                        @if ($rec['type'] == 'total')
-                            <div class="flex text-xs text-gray-500 p-0 font-extralight">
-                                {{ '(' . $rec['summary'] . ')' }}
-                            </div>
-                        @endif
-                    @endforeach
+                    <div class="flex text-xs text-gray-500 p-0 font-extralight">
+                        @foreach ($game->home_records as $rec)
+                            @if ($rec['type'] == 'total')
+                                {{ '(' . $rec['summary'] }}
+                            @endif
+                            @if ($rec['type'] == 'vsconf')
+                                {{ ', ' . $rec['summary'] . ' ' . $game->homeConference->abbr . ')' }}
+                            @endif
+                        @endforeach
+                    </div>
                 @endif
 
             </div>
