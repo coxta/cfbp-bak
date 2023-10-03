@@ -5,7 +5,7 @@
                 <div class="h-10 w-10 md:h-16 md:w-16">
                     <img src="{{ asset('img/logo.png') }}" alt="CFBP" />
                 </div>
-                <div class="flex text-blue-600 text-3xl font-extralight md:font-thin md:text-5xl">CFBP</div>
+                <div class="flex text-indigo-600 text-3xl font-extralight md:font-thin md:text-5xl">CFBP</div>
             </a>
         </x-slot>
 
@@ -42,9 +42,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
+                <x-button type="submit" color="blue">Reset Password</x-button>
             </div>
         </form>
     </x-auth-card>

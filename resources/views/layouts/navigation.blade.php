@@ -3,8 +3,10 @@
         <div class="flex justify-between h-14">
             <div class="flex px-2 lg:px-0">
                 <a href="{{ route('home') }}" class='flex items-center space-x-2'>
-                    <x-application-logo class="flex" size="8" />
-                    <div class="hidden md:flex text-xl font-thin text-indigo-600">CFBP</div>
+                    <div class="h-6 w-6 md:h-8 md:w-8">
+                        <img src="{{ asset('img/logo.png') }}" alt="CFBP" />
+                    </div>
+                    <div class="flex text-lg md:text-2xl font-light text-indigo-600">CFBP</div>
                 </a>
                 <div class="hidden lg:ml-6 lg:flex lg:space-x-4">
                     <!-- Navigation Links -->
@@ -37,7 +39,7 @@
             </div>
             <div class="flex items-center lg:hidden">
                 <!-- Mobile menu button -->
-                <button type="button" @click="open = ! open"
+                <button type="button" @click="open = !open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                     aria-controls="mobile-menu" aria-expanded="false">
 
