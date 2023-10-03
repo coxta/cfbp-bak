@@ -5,6 +5,12 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use App\Jobs\Feeds\News;
+use App\Jobs\Feeds\Teams;
+use App\Jobs\Feeds\Games;
+use App\Jobs\Feeds\Rankings;
+use App\Jobs\Feeds\SeasonSchedule;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -12,7 +18,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->job(new News)->hourly();
+        $schedule->job(new Games)->hourly();
+        $schedule->job(new Teams)->daily();
+        $schedule->job(new Rankings)->daily();
+        $schedule->job(new SeasonSchedule)->daily();
     }
 
     /**
