@@ -1,8 +1,11 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo size="20" />
+            <a href="{{ route('home') }}" class='flex items-center space-x-2 md:space-x-5'>
+                <div class="h-10 w-10 md:h-16 md:w-16">
+                    <img src="{{ asset('img/logo.png') }}" alt="CFBP" />
+                </div>
+                <div class="flex text-blue-600 text-3xl font-extralight md:font-thin md:text-5xl">CFBP</div>
             </a>
         </x-slot>
 
@@ -40,13 +43,13 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-between mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-                <x-button class="ml-4" type="submit" color="blue">Log In</x-button>
+                <x-button type="submit" color="blue">Log In</x-button>
             </div>
         </form>
     </x-auth-card>
