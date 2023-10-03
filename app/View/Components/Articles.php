@@ -19,9 +19,9 @@ class Articles extends Component
      */
     public function __construct()
     {
-        $this->stories = Article::where('article_type', 'Story')->latest('published')->take(20)->get();
-        $this->headlines = Article::where('article_type', 'HeadlineNews')->latest('published')->take(20)->get();
-        $this->previews = Article::where('article_type', 'Preview')->latest('published')->take(20)->get();
+        $this->stories = Article::where('article_type', 'Story')->latest('published')->take(12)->get();
+        $this->headlines = Article::where('article_type', 'HeadlineNews')->latest('published')->take(12)->get();
+        $this->previews = Article::where('article_type', 'Preview')->latest('published')->take(12)->get();
     }
 
     /**
