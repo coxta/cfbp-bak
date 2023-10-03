@@ -26,4 +26,8 @@ class Article extends Model
         'published'
     ];
 
+    protected $casts = [
+        'published' => 'datetime',
+    ];
+
 }

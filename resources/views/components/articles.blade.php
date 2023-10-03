@@ -41,7 +41,7 @@
                               {{ $headline->headline }}
                           </p>
                           <p class="mt-3 text-base text-gray-500">
-                              {{ $headline->description }}
+                              {{ $headline->description }}s
                           </p>
                       </a>
                   </div>
@@ -49,9 +49,7 @@
 
                       <div class="ml-3">
                           <div class="flex space-x-1 text-sm text-gray-500">
-                              <time datetime="{{ $headline->published }}">
-                                  {{ $headline->published }}
-                              </time>
+                                {{ $headline->published->diffForHumans() }}
                           </div>
                       </div>
                   </div>
