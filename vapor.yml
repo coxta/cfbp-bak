@@ -9,7 +9,7 @@ environments:
         database: cfbp-db
         scheduler: true
         runtime: 'php-8.2:al2'
-        # domain: "cfbpickem.net"
+        domain: 'cfbpickem.net'
         # cache: cfbp-redis
         build:
             - 'composer install --no-dev'
