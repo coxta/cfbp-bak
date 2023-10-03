@@ -10,6 +10,10 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
+        <link rel="icon" type="image/png" href="{{ asset('img/logo.png') }}">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
