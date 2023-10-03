@@ -11,7 +11,7 @@
                   <img class="w-full h-16 object-cover object-center" src="{{ $preview->image }}" alt="">
               </div>
               <div class="flex-1 bg-white p-2 text-xs text-gray-700 flex flex-col justify-between">
-                  <a href="{{ $preview->link }}" target="_blank" class="hover:font-bold hover:text-blue-700">
+                  <a href="{{ $preview->link }}" target="_blank" class="hover:font-semibold hover:text-gray-900">
                       {{ $preview->headline }}
                   </a>
               </div>
