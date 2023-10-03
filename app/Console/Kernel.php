@@ -18,11 +18,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->job(new News)->hourly();
-        $schedule->job(new Games)->hourly();
-        $schedule->job(new Teams)->daily();
-        $schedule->job(new Rankings)->daily();
-        $schedule->job(new SeasonSchedule)->daily();
+        // $schedule->job(new News)->hourly();
+        // $schedule->job(new Games)->hourly();
+        // $schedule->job(new Teams)->daily();
+        // $schedule->job(new Rankings)->daily();
+        // $schedule->job(new SeasonSchedule)->daily();
     }
 
     /**
