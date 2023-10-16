@@ -32,7 +32,6 @@ class News implements ShouldQueue
      */
     public function __construct()
     {
-        $this->onQueue('production')->onConnection('sqs');
         $this->log = FeedController::queued('News');
     }
 

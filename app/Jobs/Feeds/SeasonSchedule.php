@@ -56,14 +56,18 @@ class SeasonSchedule implements ShouldQueue
         $from = Carbon::parse($calendars['from_dt']);
         $thru = Carbon::parse($calendars['thru_dt']);
 
-        $dates = CarbonPeriod::create($from, $thru);
+        $dates = CarbonPeriod::make($from, $thru);
 
         foreach ($dates as $date) {
 
             $day = $date->format('Ymd');
 
-            $response = Http::get(config('espn.games') . '&calendar=blacklist&dates=' . $day);
-            $games = $response->json()['events'];
+            $dateRequest = config('espn.games') . '&calendar=blacklist&dates=' . $day;
+
+            $response = Http::get($dateRequest);
+            $games = $response->json()['events'] ?? null;
+
+            if(!$games) continue;
 
             if (count($games) > 0) {
 

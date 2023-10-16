@@ -47,7 +47,9 @@ class Teams implements ShouldQueue
         foreach ($results as $t) {
 
             $response = Http::get(config('espn.team') . $t['team']['id']);
-            $data = $response->json()['team'];
+            $data = $response->json()['team'] ?? null;
+
+            if(!$data) continue; 
 
             $conference = null;
             $division = null;
