@@ -11,7 +11,7 @@
                   <img class="w-full h-16 object-cover object-center" src="{{ $preview->image }}" alt="">
               </div>
               <div class="flex-1 bg-white p-2 text-xs text-gray-700 flex flex-col justify-between">
-                  <a href="{{ $preview->link }}" target="_blank" class="hover:font-bold hover:text-blue-700">
+                  <a href="{{ $preview->link }}" target="_blank" class="hover:font-semibold hover:text-gray-900">
                       {{ $preview->headline }}
                   </a>
               </div>
@@ -35,7 +35,7 @@
               </div>
               <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                   <div class="flex-1">
-                      <a href="#" class="block mt-2">
+                      <a href="{{ $story->link }}" target="_blank" class="block mt-2">
                           <p class="text-xl font-semibold text-gray-900">
                               {{ $story->headline }}
                           </p>
@@ -60,6 +60,19 @@
   </div>
 
   <div class="hidden lg:block lg:col-span-3">
+
+    <a href="http://promo.espn.com/collegegameday" target="_blank" class="flex flex-col mb-4 rounded-lg bg-slate-700 hover:bg-slate-900 text-white font-light tracking-wider px-4 py-2">
+        <div class="flex flex-row items-center space-x-3">
+            <img src="{{ secure_asset('img/cgd.png') }}" class="h-14 w-14"/>
+            <div class="flex flex-col">
+                <div class="flex flex-row items-center space-x-2">
+                    <p class="text-lg font-semibold">College Gameday</p>
+                    <x-heroicon-s-arrow-top-right-on-square class="h-4 w-4"/>
+                </div>
+                <p class="text-xs">Where will ESPN's College Gameday be this week?</p>
+            </div>
+        </div>
+    </a>
 
         <!-- Headlines -->
         <div class="rounded-lg bg-white shadow-xl overflow-hidden mb-4">
